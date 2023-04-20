@@ -1,0 +1,248 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    /* background: rgba(0, 0, 0, 0.6) url(./bg3.png) no-repeat center; */
+    /* background-size: 100% 100%; */
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+#section_click_here{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+#section_click_here div{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-160.5deg ,gray 50%, rgb(45, 45, 45) 50%) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: width 1.5s,height 1.5s,border-radius 1.5s,opacity 1.5s;
+}
+#section_click_here div #cilck_hear{
+    cursor: pointer;
+    display: flex;
+    border-radius: 25px;
+    background-color: lavender;
+    color: black;
+    padding: 10px;
+    user-select: none;    
+}
+/* نافذة الارسال */
+#section_message{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#span_whats,#span_sms{
+    display: none;
+}
+#section_message div{
+    background-color: white;
+    width: 90%;
+    margin-top: 2%;
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: 80%;
+    height: 40% !important;
+}
+#section_message div div{
+    display: flex;
+    justify-content: space-around;
+}
+#div_message_close{
+    justify-content: flex-end !important;
+}
+#div_message_close button{
+    outline: 3px solid red;
+    outline-offset: 3px;
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+    /* border: 5px double blue; */
+}
+#div_message_close button:focus{outline-offset: 3px !important;}
+
+#img_whatsapp,#img_sms{
+    width: 50px !important;
+    height: 50px !important;
+    color: blue;
+    font-weight: bold;
+}
+#section_message #whatsapp:hover,#section_message #sms:hover{
+    text-decoration: none !important;
+}
+/* نافذة الارسال */
+
+
+
+
+#div_message_close button{padding: 2px 20px;}
+#div_message_close button:focus{outline: none;}
+#cilck_hear:is(:hover,:focus){
+    outline-offset: 2px !important;
+    background-color: white;
+    outline: 3px solid white;
+}
+#section_click_here div span{
+    transform: rotate(90deg) !important;
+    text-indent: 3px;
+}
+main{
+    width: 100%;
+    height: 90vh;
+    direction: rtl;
+}
+
+#ram{
+    width: 100%;
+    height: 15%;
+    display: flex; 
+    justify-content: right;  
+    align-items: center; 
+}
+#ram h3{
+    position: absolute;
+    right: 0;
+    margin-right: 1%;
+    font-size: 40px;
+    font-weight: 900;
+}
+#ram h3:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 0.5px aqua;
+}
+#ram h3:nth-child(2){
+    color: white;
+    animation: animate 4s ease-in-out infinite;
+}
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(100% 54%, 83% 57%, 68% 61%, 53% 60%, 41% 48%, 30% 38%, 17% 31%, 0 30%, 0% 99%, 100% 99%);    
+    }
+    50%{
+        clip-path: polygon(100% 35%, 76% 38%, 62% 44%, 49% 52%, 34% 57%, 21% 57%, 10% 54%, 0 48%, 0% 99%, 100% 99%);    
+    }
+}
+
+main div{
+    width: 100%;
+    height: 10vh;
+    
+}
+#name{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+}
+#i_i{
+    padding: 20px 0 !important;
+    margin: 0% !important;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+#name #name_page{
+    text-indent: 10px;
+    text-shadow: 0 0 7px #03e9f4,
+                0 0 7px #03e9f4,
+                0 0 7px #03e9f4,
+                0 0 7px #03e9f4;
+    color: white;
+}
+footer , footer form , main #main_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #main_text{
+    font-size: 4vw !important;
+    height: 70%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main #main_text p{
+    width: 90%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 5px;
+    box-shadow: 0 0 10px 5px black;
+    padding: 5px;
+    border-radius: 10px;
+}
+footer{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    overflow: hidden;
+    background-color: transparent;
+}
+footer form{
+    display: flex;
+    justify-content: right;
+    direction: rtl;
+    width: 100%;
+    overflow: auto;
+    padding: 4px 0 !important;
+}
+footer form input{
+    background-color: transparent;
+    color: white;
+    outline: 2px solid white;
+    margin: 0 1%;
+    border-radius: 15px;
+}
+footer form input::placeholder{color: #03e9f4;}
+@media screen and (max-width: 600px){
+    main{
+        height: 80vh;
+    }
+}
+#submit,#text_copy{
+    margin-top: 50vh;
+}
+#send{
+    color: white;
+    margin: 4px 0 !important;
+    padding: 4px 10px !important;
+    border-radius: 15px 0;
+    background: linear-gradient(-160.5deg ,gray 50%, rgb(45, 45, 45) 50%) !important;
+}
+#send:hover{
+    text-decoration: none;
+}
+#send:is(:hover,:focus){
+    outline-offset: 2px !important;
+    background-color: white;
+    outline: 3px solid white;
+}
+/* ارسال الرابط */
+footer #img_sharing,footer #btn_sharing{
+    display: none;
+}
+#btn_sharing{
+    color: white;
+    background: linear-gradient(-160.5deg ,gray 50%, rgb(45, 45, 45) 50%) !important;
+}

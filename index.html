@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./title.png">
+    <title>تهنئة خاصة</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index.css">
+    
+
+</head>
+<body>
+    
+    <section id="section_click_here">
+        <div>
+            <button type="button" id="cilck_hear" > ✨  اضـغـط هـنـا <span> ✨ </span> </button>
+            <audio src="./audio.mp3" id="audio" hidden></audio>
+        </div> 
+    </section>
+
+
+    <section id="section_message">
+        <div>
+            <h5>شارك التهنئة</h5>
+            <br>
+            <div>
+                <a id="whatsapp" href="">
+                    <img id="img_whats" src="./whatsapp.png" alt="خطا">
+                    <span id="span_whats">واتساب</span>
+                </a>
+        
+                <a id="sms" href="">
+                    <img id="img_sms" src="./sms.png" alt="خطا">
+                    <span id="span_sms">رسالة نصية</span>
+                </a>
+            </div>
+
+            <br>
+            <div id="div_message_close">
+                <button type="button" id="btn_message_close">اغــــــلاق</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <main>
+        <div id="ram">
+            <h3>عيد مبارك</h3>
+            <h3>عيد مبارك</h3>
+        </div>
+
+        <span id="name">
+            <!-- <h4 id="i_i">انا : </h4> -->
+            <h3 id="name_page">...</h3>
+        </span>
+
+        <div id="main_text">
+            <p>
+
+            </p>
+        </div>
+    </main>
+    <footer>
+        <img src="./share.png" width="30" alt="خطا" id="img_sharing">
+        <button type="button" id="btn_sharing">مشاركة</button>
+        <form method="post">
+            <input type="text" required placeholder="اكتب اسمك" id="inp_name">
+            <button type="button" id="send">مــوافــق</button>
+        </form>
+    </footer>
+
+    
+
+
+    <script src="./jquery.js"></script>
+    <script src="./javascript.js"></script>
+    <script>
+
+        window.scrollBy(0,400);
+    
+        // $(function () {
+        //     function getRndImg(min, max) {
+        //         return Math.floor(Math.random() * (max - min + 1) ) + min;
+        //     }
+        //     $num_img = getRndImg(0,3)
+
+        //     $arr_img = ["./bg0.jpg","./bg1.jpg","./bg3.png","./bg2.jpg"]
+        //     let val_img = $arr_img[$num_img]
+        //     $("body").css({"background":`rgba(0, 0, 0, 0.6) url(${val_img}) no-repeat center`,"background-size":"100% 100%"})
+            
+        //     setTimeout(function() {
+        //         if(document.body.style.backgroundImage != `url(${val_img})`) {
+        //             $("body").css("background-color","rgba(0, 0, 0, 0.6)")
+        //         }
+        //     },200)
+        // })
+
+        let doc_title = document.title;
+        window.addEventListener("blur", () => {
+            document.title = "لماذا غادرت )= "
+        })
+        window.addEventListener("focus", () => {
+            document.title = doc_title
+        })
+
+        $(document).ready(function () {
+
+            let window_link = window.location.href
+            var url = decodeURI(window_link)
+
+
+            if(url.includes("?name=") == true){
+                let link_index = url.indexOf("?name=")
+                let link_text = url.slice(link_index)
+                var rep_text = link_text.replace("?name=","")
+
+                // if(rep_text.includes("+") == true){
+                //     let link_index = rep_text.indexOf("+")
+                //     var rep_text = rep_text.replace(rep_text[link_index]," ")
+                // }
+
+                if(url.includes("/") == true){
+                    let link_index = rep_text.lastIndexOf("/")
+                    var rep_text = rep_text.replace(rep_text[link_index]," ")
+                }
+                if(url.includes("-") == true){
+                    // let link_plus = rep_text.lastIndexOf("-")
+                    // var rep_text = rep_text.replace("-"," ")
+
+                    var spaces_name_rep = rep_text.replaceAll("-"," ")
+                    var rep_text = decodeURI(spaces_name_rep)
+                }
+
+                $("#name_page").text(rep_text)
+            }
+
+            var audio = document.getElementById("audio")
+            $("#cilck_hear").click(function () {
+                window.scrollBy(0,400);
+                audio.load()
+                audio.play()
+                $("#section_click_here div").css({"border-radius":"50%","width":"0%","height":"0%","opacity":"0"})
+                setTimeout(function(){ 
+                    $("#section_click_here").css("display","none")
+                },1500)
+            })
+            let doc_title = document.title;
+            window.addEventListener("blur", () => {
+                audio.pause();
+            })
+
+            // تغيير النص
+            function getRndText(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            $num_t = getRndText(0,5)
+            var t4 = `❤️واهتف بالحب اهلاً بالعيد , كل عام وانتم بخير❤️`;
+            var t5 = ` "يسرني ان اهنئكم بقـــــدوم"
+                    🌹عيد الفطر المبارك🌹
+                    إلـى جميــــــــــع
+                    الأهـــــــــــــــــــل
+                    والإخـــــــــــــــوان
+                    والأقـــــــــــــــارب
+                    والأصــــــــــــد قاء
+                        والزمـــــــــــــــــلاء
+                        و الأحبــــــــــــاء
+                    أسـألله القادر المقتــدر
+                        أن يجمعــــــــــــكم
+                        ووالديــــــــــــــــــكم
+                        وأولادكـــــــــــــــــــم
+                    ومن تحبــــــــــــــــــون
+                    بجوار خير البشــــــــــــــر
+                    🌷كل عام وانتم بخير🌷`;
+            
+            var t6 = "يسرني ويسعدني اتقدم لكم بتهنئة عيد الفطر المبارك متمنياً لكم دوام الصحة والعافية"
+            var t7 = "اقول لكم , تقبل الله صيامكم وقيامكم وصالح الاعمال , عيدكم مبارك وكل عام وانتم بخير وصحة وعافية, انتم ومن تحبون جميعاً باذن الله تعالى"
+
+            $arr_t = ["✨اهنئكم بحلوم عيد الفطر المبارك, وكل عام وانتم بخير✨","اقول لكم , تقبل الله منا ومنكم شهر رمضان واسعدكم بعيدة فرحا وسرورا ورضا , كل عام وانتم بخير وعساكم من عوادة",t4,t5,t6,t7]
+            $("#main_text p").text($arr_t[$num_t])
+
+            
+            $("#send").click(function () {
+                if($("#inp_name").val() != ""){
+                    let val_name = $("#inp_name").val()
+                    //  decodeURI(window.location.href)
+                    
+                    if(val_name.includes(" ") == true){
+                        var spaces_name_rep = val_name.replace(/ /g,"-")
+                        var spaces_name = decodeURI(spaces_name_rep)
+                    }else{
+                        var spaces_name = $("#inp_name").val()
+                    }
+
+                    $("#name_page").text(val_name)
+
+                    // اضافة الاسم الئ الرابط
+                    function VariableLink(key,value_key){
+                        const add_variable = new URLSearchParams(window.location.search)
+                        add_variable.set(key,value_key)
+                        const add_variable_to_link = window.location.pathname + "?" + add_variable.toString()
+                        history.pushState(null,"",add_variable_to_link)
+                    }
+                    VariableLink("name",spaces_name)
+
+                    // var name_link = VariableLink("name",val_name)
+
+                    
+                    var txt = " مفاجأة "+" ✨ "+val_name+" ✨ "+" ارسل لك رسالة تهنئة قم بفتحها "
+
+                    
+                    let url_1 = decodeURI(window.location.href)
+
+                    let whats_sms_text = txt+"                        "+url_1+"/"
+                    let whats_text = "whatsapp://send?text="+whats_sms_text
+                    $("#whatsapp").attr("href",whats_text)
+
+                    let sms_text = "sms:?body="+whats_sms_text
+                    $("#sms").attr("href",sms_text)
+
+                    let img_sharing = document.getElementById("img_sharing");
+                    let img_sharing_com = img_sharing.complete && img_sharing.naturalHeight !== 0;
+                    if(img_sharing_com == true){
+                        document.getElementById("img_sharing").style.display = "flex";
+                        document.getElementById("btn_sharing").style.display = "none";
+                    }else{
+                        document.getElementById("btn_sharing").style.display = "flex";
+                        document.getElementById("img_sharing").style.display = "noen";
+                    }
+
+                    let img_whats = document.getElementById("img_whats");
+                    let img_whats_com = img_whats.complete && img_whats.naturalHeight !== 0;
+                    if(img_whats_com == false){
+                        document.getElementById("img_whats").style.display = "none";
+                        document.getElementById("span_whats").style.display = "block";
+                    }
+
+                    let img_sms = document.getElementById("img_sms");
+                    let img_sms_com = img_sms.complete && img_sms.naturalHeight !== 0;
+                    if(img_sms_com == false){
+                        document.getElementById("span_sms").style.display = "none";
+                        document.getElementById("img_sms").style.display = "none";
+                    }
+                }
+            })
+
+            //  نافذة الارسال 
+            $("#img_sharing,#btn_sharing").click(function () {
+                $("#section_message").css("display","flex")
+            })
+            $("#btn_message_close").click(function () {
+                $("#section_message").css("display","none")
+            })
+
+
+            if($("body").width() <= 570){
+                $("#img_sharing,#btn_sharing").click(function () {
+                    $("#section_message").css("display","flex")
+                })
+                $("#img_sharing,#btn_sharing").hover(function () {
+                    $("#section_message").css("display","flex")
+                })
+                $("#btn_message_close").click(function () {
+                    $("#section_message").css("display","none")
+                }) 
+            }
+            // setTimeout(function () {
+            //     window.scrollBy(0,400);
+            //     $("#section_click_here div").css({"border-radius":"50%","width":"0%","height":"0%","opacity":"0"})
+            //     setTimeout(function(){ 
+            //         $("#section_click_here").css("display","none")
+            //     },1500)
+            // },10000)
+        })
+    </script>
+</body>
+</html>
